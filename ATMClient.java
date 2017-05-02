@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ATMClient {
 	final static String host = "localhost";
-	public static void doTest(String host){
+	public static void startClient(String host){
 		try {
 			Registry registry = LocateRegistry.getRegistry(host, 5000);
             ValidatationInterface _validatePin = (ValidatationInterface) registry.lookup("PinValidation");
@@ -27,6 +27,6 @@ public class ATMClient {
         }
 	}
 	public static void main(String[] args) {
-        doTest(host);
+        startClient(host);
 	}
 }
